@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { mockGradingStudents, mockModules, mockClasses, mockAssignments, mockStudentAssignments, mockClassEnrollments } from '@/lib/mock-data';
 import { TeacherHeader } from './TeacherHeader';
-import { StudentProgressTable } from './StudentProgressTable';
+import { StudentProgressTable } from '@/components/student/StudentProgressTable';
 import { GradingInterface } from './GradingInterface';
 import ClassSelector from './ClassSelector';
 import ClassworkList from './ClassworkList';
@@ -12,12 +12,12 @@ import CreateAssignmentModal from './CreateAssignmentModal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Assignment } from '@/lib/types';
+import { Assignment, GradingStudent } from '@/lib/types';
 import Link from 'next/link';
 
 export function TeacherDashboard() {
   const { user, logout } = useAuth();
-  const [selectedStudent, setSelectedStudent] = useState<(typeof mockGradingStudents)[0] | null>(null);
+  const [selectedStudent, setSelectedStudent] = useState<GradingStudent | null>(null);
   const [showGradingInterface, setShowGradingInterface] = useState(false);
   const [selectedClassId, setSelectedClassId] = useState<string>('class-001');
   const [showCreateModal, setShowCreateModal] = useState(false);

@@ -89,7 +89,7 @@ export function QuestInterface({
   }
 
   const handleBack = () => {
-    if (stage === 'input' || stage === 'result') {
+    if (stage === 'input') {
       setStage('scenario');
     } else {
       router.push('/dashboard');
