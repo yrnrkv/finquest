@@ -108,6 +108,16 @@ export interface StudentAIProfile {
   averageScore: number;
 }
 
+export interface GradingStudent {
+  studentId: string;
+  studentName: string;
+  moduleId: string;
+  moduleName: string;
+  completedAt?: string;
+  score: number;
+  status: 'not_started' | 'in_progress' | 'completed';
+}
+
 export interface DifficultyAdjustment {
   newDifficulty: 'up' | 'down' | 'maintain';
   reason: string;

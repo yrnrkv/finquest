@@ -1,4 +1,4 @@
-import { User, Module, Quest, QuestAttempt, StudentProgress, StudentAIProfile, Class, Assignment, StudentAssignment, ClassEnrollment, LearningMaterial } from './types';
+import { User, Module, Quest, QuestAttempt, StudentProgress, StudentAIProfile, Class, Assignment, StudentAssignment, ClassEnrollment, LearningMaterial, GradingStudent } from './types';
 
 // Mock Users
 export const mockUsers: Record<string, User> = {
@@ -143,7 +143,7 @@ export const mockAIProfile: StudentAIProfile = {
 };
 
 // Mock Dashboard Data
-export const mockGradingStudents = [
+export const mockGradingStudents: GradingStudent[] = [
   {
     studentId: 'student-001',
     studentName: 'Alex Johnson',
